@@ -1,0 +1,102 @@
+import numpy as np
+import pandas as pd
+sales_df=pd.read_csv('miniproject1.csv')
+sales_df.head()
+store_df=pd.read_csv('miniprojectclothes.csv')
+store_df.head()
+sales_df['StateHoliday'].value_counts()
+sales_df['Date'].unique()
+sales_df.isnull().sum()
+sales_df['SchoolHoliday'] .unique() 
+store_df.isnull().sum()
+li = ["DayNoinWeek" , "StateHoliday" , "SchoolHoliday"]
+
+for i in li:
+  print(i)
+  print(sales_df[i].unique())
+  print("-----------------------")
+store_df.nunique()
+store_df['CompetitionDistance'] = store_df['CompetitionDistance'].fillna(0)
+store_df['CompetitionOpenSinceMonth'] = store_df['CompetitionOpenSinceMonth'].fillna(0)
+store_df['CompetitionOpenSinceYear'] = store_df['CompetitionOpenSinceYear'].fillna(0)
+store_df['Promo2SinceWeek'] = store_df['Promo2SinceWeek'].fillna(0)
+store_df['Promo2SinceYear'] = store_df['Promo2SinceYear'].fillna(0)
+store_df['PromoInterval'] = store_df['PromoInterval'].fillna(0)
+store_df.isna().sum()
+final1=pd.merge(store_df,sales_df,on='StoreNo',how='left')
+final1.head()
+#Change data types object to int 
+final1.loc[final1['StateHoliday'] == '0', 'StateHoliday'] = 0
+final1.loc[final1['StateHoliday'] == 'a', 'StateHoliday'] = 1
+final1.loc[final1['StateHoliday'] == 'b', 'StateHoliday'] = 2
+final1.loc[final1['StateHoliday'] == 'c', 'StateHoliday'] = 3
+#store the value with same column name i.e StateHoliday with function astype
+final1['StateHoliday'] = final1['StateHoliday'].astype(int, copy=False)
+# change Data Types object into int 
+final1.loc[final1['Assortment'] == 'a', 'Assortment'] = 0
+final1.loc[final1['Assortment'] == 'b', 'Assortment'] = 1
+final1.loc[final1['Assortment'] == 'c', 'Assortment'] = 2
+#store the value with same column name i.e Assortment with function astype
+final1['Assortment'] = final1['Assortment'].astype(int, copy=False)
+# change Data Types object into int 
+final1.loc[final1['ClotheType'] == 'shirt', 'ClotheType'] = 0
+final1.loc[final1['ClotheType'] == 't-shirt', 'ClotheType'] = 1
+final1.loc[final1['ClotheType'] == 'trousers', 'ClotheType'] = 2
+final1.loc[final1['ClotheType'] == 'pant', 'ClotheType'] = 3
+#store the value with same column name i.e Assortment with function astype
+final1['SClotheType'] = final1['ClotheType'].astype(int, copy=False)
+print(final1[['StateHoliday', 'Assortment', 'ClotheType']].nunique())
+final1["Sales"].value_counts()
+final1['Date'] = pd.to_datetime(final1['Date'], format= '%d-%m-%Y')
+final1['CompetitionOpenSinceMonth'] = pd.DatetimeIndex(final1['Date']).month
+final1['CompetitionOpenSinceYear']= final1['CompetitionOpenSinceYear'].astype(int)
+final1['Promo2SinceYear']= final1['Promo2SinceYear'].astype(int)
+# code for change float into integer 
+final1['CompetitionDistance']= final1['CompetitionDistance'].astype(int)
+final1['Promo2SinceWeek']= final1['Promo2SinceWeek'].astype(int)
+final1.describe().apply(lambda x: round(x, 2))
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+def calc_vif(X):
+
+    # Calculating VIF
+    vif = pd.DataFrame()
+    vif["variables"] = X.columns
+    vif["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
+
+    return(vif)
+calc_vif(final1[[i for i in final1.describe().columns if i not in ['Sales']]])
+final1[(final1.StoreOpen == 0) & (final1.Sales == 0)].count()[0]
+new_df = final1.drop(final1[(final1.StoreOpen == 0) & (final1.Sales == 0)].index)
+new_df = pd.get_dummies(new_df, columns=['PromoInterval'])
+
+new_df=pd.read_csv('cleandata.csv')
+# defining dependent variable
+dependent_variables = 'Sales'
+
+# defining independent variable
+independent_variables = list(new_df.columns.drop(['Promo2SinceYear','Date','Sales']))
+# Create the data of independent variables
+X = new_df[independent_variables].values
+
+# Create the data of dependent variable
+y = new_df[dependent_variables].values
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import pickle
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state = 0)
+reg = LinearRegression().fit(X_train, y_train)
+y_pred = reg.predict(X_test)
+pd.DataFrame(zip(y_test, y_pred), columns = ['actual', 'predicted'])
+modelname='model.pkl'
+pickle.dump(reg,open(modelname,'wb'))
+loadedmodel=pickle.load(open('model.pkl','rb'))
+pred=loadedmodel.predict(X_test)
+from sklearn.metrics import mean_squared_error
+MSE  = mean_squared_error(y_test, y_pred)
+mse2 = mean_squared_error(y_test,pred)
+if (mse2==MSE):
+    print(1)
+len(X_test[1])
+independent_variables
+new_df
+X[844387]

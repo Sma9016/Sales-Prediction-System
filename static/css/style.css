@@ -1,0 +1,234 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    background-image: url('/static/images/background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.nav{
+    height: 50px;
+}
+.nav a{
+    float: right;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(150, 150, 150);
+}
+.nav a:hover{
+    color: white;
+    background-color: rgb(4, 29, 37);
+    border-radius: 20px;
+}
+.nav h2{
+    float: left;
+    padding: 8px;
+    color: white;
+}
+body{
+    background-image: url('/static/images/background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form{
+    width: 280px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(223, 222, 228, 0.118);
+    background-color: rgba(223, 222, 228, 0.281);
+    position: absolute;
+    top: 40%;
+    height: 400px;
+    left: 40%;
+    bottom: 10%;
+    transform: translate(-20%,-30%);
+}
+.login-form {
+    width: 280px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(223, 222, 228, 0.118);
+    background-color: rgba(223, 222, 228, 0.281);
+    position: absolute;
+    top: 40%;
+    height: 300px;
+    left: 40%;
+    bottom: 10%;
+    transform: translate(-20%, -30%);
+}
+.input-form {
+    width: 280px;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(223, 222, 228, 0.118);
+    background-color: rgba(223, 222, 228, 0.281);
+    position: absolute;
+    top: 35%;
+    height: 400px;
+    left: 40%;
+    bottom: 10%;
+    transform: translate(-20%, -30%);
+    overflow-y: scroll;
+}
+.form form div{
+    align-items: center;
+    justify-content: center;
+}
+.form select,input[type=text],input[type=number],input[type=email],input[type=password]{
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    resize: vertical;
+}
+.form label {
+    padding: 12px 12px 12px 0;
+    font-weight: 600;
+    display: inline-block;
+}
+.form form {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.form button{
+    margin-top: 20px;
+    margin-left: 60px;
+    padding: 5px;
+    color: white;
+    width: 120px;
+    background-color: hwb(249 0% 85%);
+    border-radius: 15px;
+    border: 1px aqua;
+}
+.form h2{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.form .link{
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+}
+.form a{
+    text-decoration: none;
+    color: white;
+    color: rgb(14, 52, 78);
+}
+.result{
+    color: white;
+    text-align: center;
+}
+.input-form form div {
+    align-items: center;
+    justify-content: center;
+}
+
+.input-form select,
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password] {
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    resize: vertical;
+}
+
+.input-form label {
+    padding: 12px 12px 12px 0;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.input-form form {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.input-form button {
+    margin-top: 20px;
+    margin-left: 60px;
+    padding: 5px;
+    color: white;
+    width: 120px;
+    background-color: hwb(249 0% 85%);
+    border-radius: 15px;
+    border: 1px aqua;
+}
+
+.input-form h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.input-form .link {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.input-form a {
+    text-decoration: none;
+    color: white;
+    color: rgb(14, 52, 78);
+}
+.login-form form div {
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form select,
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password] {
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    resize: vertical;
+}
+
+.login-form label {
+    padding: 12px 12px 12px 0;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.login-form form {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    margin-top: 20px;
+    margin-left: 60px;
+    padding: 5px;
+    color: white;
+    width: 120px;
+    background-color: hwb(249 0% 85%);
+    border-radius: 15px;
+    border: 1px aqua;
+}
+
+.login-form h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.login-form .link {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.login-form a {
+    color: white;
+    text-decoration: none;
+    color: rgb(14, 52, 78);
+}

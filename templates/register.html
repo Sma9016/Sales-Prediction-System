@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>REGISTER</title>
+</head>
+<body class="login">
+    <div class="nav">
+        <h2>SALES PRICE PREDICTION</h2>
+    </div>
+    <div class="form">
+        <h2>REGISTER</h2>
+        <form action="{{url_for('home')}}" method="post">
+            <div class="uname">
+                <label for="uname">NAME</label>
+                <input type="text" name="uname" id="uname" required>
+            </div>
+            <div class="email">
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="pass">
+                <label for="pass">PASSWORD</label>
+                <input type="password" name="pass" id="pass" required>
+            </div>
+            <div class="cpass">
+                <label for="cpass">RE-ENTER PASSWORD</label>
+                <input type="password" name="cpass" id="cpass">
+            </div>
+            <button type="submit">REGISTER</button>
+            <div class="link">
+                already a user? <a href="{{url_for('login')}}">Login</a><br>
+                {{message}}
+            </div>
+        </form>
+    </div>
+</body>
+</html>

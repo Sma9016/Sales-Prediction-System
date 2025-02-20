@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>ENTER</title>
+</head>
+<body>
+    <div class="input-form">
+        <h2>ENTER DETAILS</h2>
+    <form action="{{url_for('dummy')}}" method="post">
+        <div class="one">
+            <label for="storeno">STORE NO:</label>
+            <input type="number" name="storeno" id="storeno" placeholder="1-1115">
+        </div>
+        <div class="two">
+            <label for="clothtype">CLOTH TYPE:</label>
+            <select name="clothtype" id="clothtype">
+                <option value="0">shirt</option>
+                <option value="1">t-shirt</option>
+                <option value="2">trousers</option>
+                <option value="3">pant</option>
+            </select>
+        </div>
+        <div class="three">
+            <label for="assortment">Assortment</label>
+            <select name="assortment" id="assortment">
+                <option value="0">a</option>
+                <option value="1">b</option>
+                <option value="2">c</option>
+            </select>
+        </div>
+        <div class="four">
+            <label for="competetiondistance">CompetitionDistance</label>
+            <input type="number" name='competitiondistance' id="competitiondistance" placeholder="competetiondistance" required>
+        </div>
+        <div class="five">
+            <label for="cosm">CompetitionOpenSinceMonth</label>
+            <select name="cosm" id="cosm" required>
+                <option value="1">JAN</option>
+                <option value="2">FEB</option>
+                <option value="3">MAR</option>
+                <option value="4">APR</option>
+                <option value="5">MAY</option>
+                <option value="6">JUN</option>
+                <option value="7">JULY</option>
+                <option value="8">AUG</option>
+                <option value="9">SEP</option>
+                <option value="10">OCT</option>
+                <option value="11">NOV</option>
+                <option value="12">DEC</option>
+            </select>
+        </div>
+        <div class="six">
+            <label for="cosy">CompetitionOpenSinceYear</label>
+            <input type="number" name="cosy" id="cosy" required placeholder="yyyy">
+        </div>
+        <div class="seven">
+            <label for="promo2">Promo2</label>
+            <select name="promo2" id="promo2" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div class="eight">
+            <label for="promo2sinceweek">Promo2SinceWeek</label>
+            <input type="number" name="promo2sinceweek" id="promo2sinceweek" placeholder="0-50" required>
+        </div>
+        <div class="nine">
+            <label for="dayinaweek">DayInAWeek</label>
+            <select name="dayinaweek" id="dayinaweek" required>
+                <option value="1">sunday</option>
+                <option value="2">monday</option>
+                <option value="3">tuesday</option>
+                <option value="4">wednesday</option>
+                <option value="5">thursday</option>
+                <option value="6">friday</option>
+                <option value="7">saturday</option>
+            </select>
+        </div>
+        <div class="ten">
+            <label for="customers">Customers</label>
+            <input type="number" name="customers" id="customers" required>
+        </div>
+        <div class="eleven">
+            <label for="storeopen">StoreOpen</label>
+            <select name="storeopen" id="storeopen" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div class="twelve">
+            <label for="promo">Promo</label>
+            <select name="promo" id="promo" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div class="thirteen">
+            <label for="stholiday">StateHoliday</label>
+            <select name="stholiday" id="stholiday" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div class="fourteen">
+            <label for="scholiday">SchoolHoliday</label>
+            <select name="scholiday" id="scholiday" required>
+                <option value="0">no</option>
+                <option value="1">yes</option>
+            </select>
+        </div>
+        <div class="sclothtype">
+            <label for="sclothtype">SClothType</label>
+            <select name="sclothtype" id="sclothtype" required>
+                <option value="0">shirt</option>
+                <option value="1">t-shirt</option>
+                <option value="2">trousers</option>
+                <option value="3">pant</option>
+            </select>
+        </div>
+        <div class="promointerval">
+            <label for="promointerval">PROMOINTERVAL</label>
+            <select name="promointerval" id="promointerval" required>
+                <option value="0">None</option>
+                <option value="1">JAN/APR/JUL/OCT</option>
+                <option value="2">FEB/MAY/AUG/NOV</option>
+                <option value="3">MAR/JUN/SEPT/DEC</option>
+            </select>
+        </div>
+        <button type="submit">PREDICT</button>
+    </form>
+    </div>
+</body>
+</html>
